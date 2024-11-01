@@ -37,11 +37,8 @@ Although Dependabot isn't part of the GitHub Advanced Security product suite, it
 ### Exercise 2: Enable Code Scanning
 
 1. Next, let's enable **Code Scanning with CodeQL**. These settings are also under the **Code security** settings page.
-2. Click the **Enable** button next to GitHub Advanced Security.
-3. A prompt will confirm that you want to **Enable GitHub Advanced Security for this repository** - click the button.
-    - The prompt tells you how many GitHub Advanced Security licenses you would consume by enabling this feature - which is useful if you are an organization owner and want to ensure you have enough licenses for your organization.
-4. Underneath the GitHub Advanced Security | Code Scanning heading, click the **Set up** button in the **CodeQL analysis** row.
-5. There are two options: **Default** and **Advanced**. Select the **Default** option and review the settings.
+2. Underneath the Code Scanning heading, click the **Set up** button in the **CodeQL analysis** row.
+3. There are two options: **Default** and **Advanced**. Select the **Default** option and review the settings.
     - For this lab, we will use the **Default** setup which creates a managed Actions workflow (i.e. you will not see a file committed to the repo). You can use the Advanced option to manage your code scanning workflow as a GitHub Actions workflow YAML file committed to the repo. The **Default** option is a great option to get started quickly to enable code scanning in a repository without needing to commit any additional code.
     - By default, it will scan the JavaScript code, use the default CodeQL queries (for highest precision), and scan the default branch on push, pull request, and on a weekly schedule.
 
@@ -49,13 +46,13 @@ Although Dependabot isn't part of the GitHub Advanced Security product suite, it
   <img src="images/lab-1-2-1.png"/>
 </details>
   
-6. Click the **Enable CodeQL** button to save the settings and enable Code Scanning.
+4. Click the **Enable CodeQL** button to save the settings and enable Code Scanning.
 
 <details>
   <img src="images/lab-1-2-2.png"/>
 </details>
   
-6. Ensure that **Copilot Autofix** is enabled (in the **Code Scanning --> Tools** section).
+5. Ensure that **Copilot Autofix** is enabled (in the **Code Scanning --> Tools** section).
 
 <details>
   <img src="images/lab-1-2-3.png"/>
@@ -64,7 +61,7 @@ Although Dependabot isn't part of the GitHub Advanced Security product suite, it
 > [!NOTE]  
 > You don't need a Copilot license in order to use the Copilot features with GitHub Advanced Security. However, Copilot can certainly be helpful in resolving issues in your IDE by using Copilot chat to explain the vulnerability and how to fix it.
 
-7. Optionally, configure the **Check runs failure threshold** - by default, a pull request will be blocked if there are any high or higher security alerts.
+6. Optionally, configure the **Check runs failure threshold** - by default, a pull request will be blocked if there are any high or higher security alerts.
 
 ### Exercise 3: Enable Secret Scanning
 
