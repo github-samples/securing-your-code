@@ -1,32 +1,20 @@
-# Extra Credit - Lab 7 - Advanced CodeQL Setup
+# Extra Credit - Lab 7 - Custom Patterns for Secret Scanning
 
-We set up Code Scanning with CodeQL using the default method. Now, let's try using the **[advanced setup](https://docs.github.com/en/code-security/code-scanning/creating-an-advanced-setup-for-code-scanning/configuring-advanced-setup-for-code-scanning)**!
-
-This extra credit lab covers parts of the following exam domains:
-
-- Domain 4: Configure and use code scanning
-- Domain 5: Use code scanning with CodeQL
-- Domain 6: Describe GitHub Advanced Security best practices
+We are just using the out of the box secret scanning settings. Perhaps you are interested in finding other patterns, such as credit card patterns, committed in the code.
 
 ## Exercise
 
-Why might you want to use the advanced setup? Here are some reasons:
+Your assignment here is to implement a secret scanning custom pattern. You can start under the **Settings** --> **Code Security and Analysis** page.
 
-- More control over triggers and schedule
-- When pulling in packages from a private feed, you may have to provide instructions on authorizing to the NuGet, NPM, Maven, etc. feed.
-- For compiled languages, providing more instructions on how to build the code
-- Ability to customize the CodeQL configuration (such as query suites used)
-- Manage code scanning settings "as code"
-- Utilize 3rd party code scanning tooling
+If you are looking for an example of what to search for, we suggest creating a pattern for finding a credit card! Mickey may or may not have accidentally committed customer credit card numbers to the repository and we need to alert on this.
 
-### Assignment
+Create a pattern, run a dry-run, and hopefully you find the pattern! If so, save the custom secret scanning pattern to implement.
 
-Your assignment here is to switch to the **[advanced setup](https://docs.github.com/en/code-security/code-scanning/creating-an-advanced-setup-for-code-scanning/configuring-advanced-setup-for-code-scanning)**. You can start under the **Settings** --> **Code Security and Analysis** page.
-
-Your goal is to have a CodeQL workflow committed that successfully scans your code. Pay attention to some of the configuration options for the CodeQL scanning action. Refer to the [documentation](https://docs.github.com/en/code-security/code-scanning/creating-an-advanced-setup-for-code-scanning/configuring-advanced-setup-for-code-scanning) for more details.
+> [!TIP]
+> You can check out [examples for custom patterns for secret scanning](https://github.com/advanced-security/secret-scanning-custom-patterns/tree/main?tab=readme-ov-file#personally-identifiable-information-pii), including a credit card example (under PII), in the [advanced-security/secret-scanning-custom-patterns](https://github.com/advanced-security/secret-scanning-custom-patterns/tree/main?tab=readme-ov-file#personally-identifiable-information-pii) repo!
 
 ## Summary
 
-In this lab, you have learned how to set up and configure advanced code scanning. There is no definitive answer as to whether the default or advanced setup is better. The default setup is ideal for quickly configuring CodeQL on repositories without requiring code changes or PR approvals. However, the advanced setup offers more customization and flexibility.
+In this lab, you should have identified the credit card number that was accidentally committed. Custom secret scanning patterns offer an excellent way to implement additional scanning patterns that are crucial for your organization!
 
 ➡️ Head back to the [labs](README.md) page.

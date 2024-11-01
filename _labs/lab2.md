@@ -2,12 +2,6 @@
 
 Now that we have all of the security feature enabled, let's review the security alerts that have been created and how to manage them.
 
-This lab covers parts of the following exam domains:
-
-- Domain 2: Configure and use secret scanning
-- Domain 3: Configure and use dependency management
-- Domain 4: Configure and use code scanning
-
 ## Exercise 1: Reviewing Dependabot alerts
 
 1. Click the **Security** tab in the repo. This is where you can see and manage all of the security alerts for the repo.
@@ -114,6 +108,7 @@ This lab covers parts of the following exam domains:
 13. Accept the defaults and click **Commit change**.
 14. This will create a draft pull request with the fix for the vulnerability. In a real world example, assuming your build and tests pass, you would move the PR out of a draft state, having someone on your team review it, and then merge the change.
     - The nice thing with code scanning alerts (just like Dependabot alerts) is that once you merge the code that resolves an alert, the alert will be automatically closed. This is because the alert is no longer present in the code.
+
 <details>
   <img src="images/lab-2-2-4.png"/>
 </details>

@@ -2,14 +2,17 @@
 
 Welcome! In this lab, you will be introduced to GitHub Advanced Security (GHAS) and its features. You will use the Juice Shop sample repository to enable the GHAS features, manage alerts, and learn how GitHub Advanced Security can keep vulnerabilities out of your code in the first place.
 
-This lab covers parts of the following exam domains:
-
-- Domain 2: Configure and use secret scanning
-- Domain 3: Configure and use dependency management
-- Domain 4: Configure and use code scanning
-
 > [!TIP]
 > We recommend opening up two browser windows, one with the lab and one with the working copy of your repo!
+
+## Forking the repository
+
+In this excerise, you will fork a repository with code from which you can work to test our the GHAS capabilities.
+
+1. Navigate to [https://github.com/Ignite-GHAS-Workshop/ghas-workshop-repo](https://github.com/Ignite-GHAS-Workshop/ghas-workshop-repo) in your browser.
+2. Click the **Fork** button in the upper right corner of the page.
+3. Fork the repository to your personal account.
+4. Refresh the page a few seconds after you fork the repository to see the new repository in your account.
 
 ## Enabling the security settings
 
@@ -70,7 +73,7 @@ Although Dependabot isn't part of the GitHub Advanced Security product suite, it
 3. Click the **Enable** button next to the **Validity checks** setting. This feature checks if the secret is still valid for [specific partners](https://docs.github.com/en/enterprise-cloud@latest/code-security/secret-scanning/introduction/supported-secret-scanning-patterns#high-confidence-patterns), such as Azure, AWS, and, of course, GitHub. As an example, you can use this feature to check if a GitHub personal access token found in the repo is still valid and needs to be revoked.
 4. Click the **Enable** button next to the **Non-provider patterns** setting. This scans for patterns that don't correspond to partners but still have a common syntax, such as a MySQL or MongoDB connection string.
 5. Click the **Enable** button next to the "Push protection" setting. This feature will block pushes that contain high-precision secrets. You can use this [chart](https://docs.github.com/en/enterprise-cloud@latest/code-security/secret-scanning/introduction/supported-secret-scanning-patterns#supported-secrets) to determine which types of secrets would be blocked with secret scanning push protection enabled.
-6. Optionally, configure **Who can bypass push protection for secret scanning**. 
+6. Optionally, configure **Who can bypass push protection for secret scanning**.
     - By default, as to not interrupt developers' workflows, anyone with write access to the repository can manually bypass a blocked push that contains secrets (administrators will be notified of this, and it is also captured in the audit logs).
     - You can change this to only allow select users/teams (or no one) to bypass secret scanning push protection.
 7. Note that you can define your own **Custom patterns** from this page to scan for secrets that don't correspond to a known provider pattern.
