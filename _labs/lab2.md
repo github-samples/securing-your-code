@@ -63,6 +63,21 @@ Now that we have all of the security feature enabled, let's review the security 
   <img src="images/lab-2-1-5.png"/>
 </details>
 
+
+11. Auto-triage your alerts allows you control over how Dependabot opens pull requests, ignores false positives and snoozes alerts. Navigate to  the **Settings** tab (the icon of the gear) in the repo, back to **Code Scanning**, then find **Dependabot rules** underneath **Dependabot**.
+
+12.  Add a rule to snooze any alerts that do not have a fix available.  Choose the "gear" icon and select the `New rule` button.  Name the rule `Snooze when no patch available`, add a target metadata for all npm packages: `ecosystem:npm` and ensure the `Dismiss Alerts` - `Until patch is available` is selected.  Next, select `Create rule`.
+
+<details>
+  <img src="images/lab-2-1-6.png"/>
+</details>
+
+13. Navigating back to the **Security** tab /  **Dependabot** under the **Vulnerability alerts** heading. You will see `1 Closed` heading.  Select this to find your alert `Command Injection in marsdb` without any fix has now been `Dismissed` as `auto-dismissed`.  The audit log will note `Repository rule created and Snooze when no patch available was applied`
+
+<details>
+  <img src="images/lab-2-1-7.png"/>
+</details>
+
 ## Exercise 2: Reviewing Code Scanning alerts
 
 1. Under the **Security** tab in the repo, click on **Code scanning** to review the code scanning alerts.
