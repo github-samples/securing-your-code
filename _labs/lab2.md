@@ -2,12 +2,6 @@
 
 Now that we have all of the security feature enabled, let's review the security alerts that have been created and how to manage them.
 
-This lab covers parts of the following exam domains:
-
-- Domain 2: Configure and use secret scanning
-- Domain 3: Configure and use dependency management
-- Domain 4: Configure and use code scanning
-
 ## Exercise 1: Reviewing Dependabot alerts
 
 1. Click the **Security** tab in the repo. This is where you can see and manage all of the security alerts for the repo.
@@ -69,6 +63,21 @@ This lab covers parts of the following exam domains:
   <img src="images/lab-2-1-5.png"/>
 </details>
 
+
+11. Auto-triage your alerts allows you control over how Dependabot opens pull requests, ignores false positives and snoozes alerts. Navigate to  the **Settings** tab (the icon of the gear) in the repo, back to **Code Scanning**, then find **Dependabot rules** underneath **Dependabot**.
+
+12.  Add a rule to snooze any alerts that do not have a fix available.  Choose the "gear" icon and select the `New rule` button.  Name the rule `Snooze when no patch available`, add a target metadata for all npm packages: `ecosystem:npm` and ensure the `Dismiss Alerts` - `Until patch is available` is selected.  Next, select `Create rule`.
+
+<details>
+  <img src="images/lab-2-1-6.png"/>
+</details>
+
+13. Navigating back to the **Security** tab /  **Dependabot** under the **Vulnerability alerts** heading. You will see `1 Closed` heading.  Select this to find your alert `Command Injection in marsdb` without any fix has now been `Dismissed` as `auto-dismissed`.  The audit log will note `Repository rule created and Snooze when no patch available was applied`
+
+<details>
+  <img src="images/lab-2-1-7.png"/>
+</details>
+
 ## Exercise 2: Reviewing Code Scanning alerts
 
 1. Under the **Security** tab in the repo, click on **Code scanning** to review the code scanning alerts.
@@ -112,8 +121,9 @@ This lab covers parts of the following exam domains:
 11. It will take a little time (30-60s) to generate a suggestion. Wait for it to finish.
 12. If you're happy with the suggestion, click the **Commit to a new branch** button.
 13. Accept the defaults and click **Commit change**.
-14. This will create a draft pull request with the fix for the vulnerability. In a real world example, assuming your build and tests pass, you would move the PR out of a draft state, having someone on your team review it, and then merge the change.
+14. This will create a `draft` pull request with the fix for the vulnerability. In a real world example, assuming your build and tests pass, you would move the PR out of a draft state, having someone on your team review it, and then merge the change.
     - The nice thing with code scanning alerts (just like Dependabot alerts) is that once you merge the code that resolves an alert, the alert will be automatically closed. This is because the alert is no longer present in the code.
+
 <details>
   <img src="images/lab-2-2-4.png"/>
 </details>
@@ -133,36 +143,31 @@ This lab covers parts of the following exam domains:
 
 ## Exercise 3: Reviewing Secret Scanning alerts
 
-1. Under the **Security** tab in the repo, click on the **Secret scanning** --> **Default** option. This will show all of the default secret scanning alerts.
-2. You should see a number of alerts. For example, there should be a **GitHub Personal Access token alert**. Click it.
+1. Since this is a brand new fork of a public repo, you will not have any secrets detected.  The next few steps we will review what you would see if we had any secrets detected (optional steps in Lab 5.)
+
+2. Under the **Security** tab in the repo, click on the **Secret scanning** view. This will show all of the secret scanning alerts. (This should be empty for you.)
+
+<details>
+  <img src="images/lab-2-3-1.png"/>
+</details>
+
+3. Viewing a secret scanning alert shows details about the leak
     - This page shows where in the code the secret was discovered (if there were multiple locations, it would list them all).
     - If a secret is found in the code, we would want to revoke manually in the designated service.
     - It's recommended to revoke the secret instead of rewriting history because the secret was exposed and you don't know who may have seen it.
     - If you re-write history, the secret will still be valid and could be used by an attacker. Also, re-writing history modifies commit hashes and can make traceability more difficult.
 
 <details>
-  <img src="images/lab-2-3-1.png"/>
+  <img src="images/lab-2-3-4.png"/>
 </details>
 
-3. You can click on **Verify secret**. It will say it's not currently valid on `github.com`, but that doesn't mean it doesn't come from another GitHub instance (such as GitHub Enterprise Server).
-4. Go back to list of secret scanning alerts. Click on the **Google API key** alert.
-5. Click on **Verify secret** again. This time, it should say **secret inactive**. This is a good candidate to **Close as** --> **Revoked** (click the **Close as** button in the upper right to do so). Do this.
+4. If you view an alert and choose **Verify secret** and this time, it says **secret inactive**. This is a good candidate to **Close as** --> **Revoked**.
     - Unlike Dependabot alerts and Code Scanning alerts, secret scanning alerts are not automatically closed when the secret is removed from the code - whether by a new commit or by re-writing history. This is because the secret was exposed and you don't know who may have seen it. So, you have to manually close the alert once you revoke the token.
-6. Navigate back to the **Default** secret alerts list.
-7. We can click **1 Closed** to see the alert we just closed.
 
 <details>
   <img src="images/lab-2-3-2.png"/>
 </details>
 
-11. Click on the **Experimental** secret scanning alerts option. This will show all of the alerts that are not high confidence, such as generic passwords, keys, and things such as HTTP bearer authentication header tokens found in the code.
-12. Let's click into one of the **Password** alerts.
-
-<details>
-  <img src="images/lab-2-3-3.png"/>
-</details>
-
-13. Just like high confidence secret scanning alerts, it shows where the secret was found in the code. The secret was found with AI, so it may or may not be a real secret or password. If it's not, we can close it manually and mark it as a false positive.
 
 ## Summary
 

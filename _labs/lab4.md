@@ -2,11 +2,6 @@
 
 With Dependency Review enabled and configured, we want to block vulnerable packages from entering the codebase. We can define a repository ruleset to enforce this as well!
 
-This lab covers parts of the following exam domains:
-
-- Domain 3: Configure and use dependency management
-- Domain 6: Describe GitHub Advanced Security best practices
-
 ## Exercise 1: Add the Dependency Review Action
 
 First, let's add the dependency review action workflow.

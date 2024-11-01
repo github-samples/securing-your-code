@@ -1,12 +1,6 @@
-# Extra Credit - Lab 7 - Advanced CodeQL Setup
+# Extra Credit - Lab 6 - Advanced CodeQL Setup
 
 We set up Code Scanning with CodeQL using the default method. Now, let's try using the **[advanced setup](https://docs.github.com/en/code-security/code-scanning/creating-an-advanced-setup-for-code-scanning/configuring-advanced-setup-for-code-scanning)**!
-
-This extra credit lab covers parts of the following exam domains:
-
-- Domain 4: Configure and use code scanning
-- Domain 5: Use code scanning with CodeQL
-- Domain 6: Describe GitHub Advanced Security best practices
 
 ## Exercise
 
