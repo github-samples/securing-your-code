@@ -72,8 +72,7 @@ Although Dependabot isn't part of the GitHub Advanced Security product suite, it
 5. Click the **Enable** button next to the "Push protection" setting. This feature will block pushes that contain high-precision secrets. You can use this [chart](https://docs.github.com/en/enterprise-cloud@latest/code-security/secret-scanning/introduction/supported-secret-scanning-patterns#supported-secrets) to determine which types of secrets would be blocked with secret scanning push protection enabled.
 6. Optionally, configure **Who can bypass push protection for secret scanning**.
     - By default, as to not interrupt developers' workflows, anyone with write access to the repository can manually bypass a blocked push that contains secrets (administrators will be notified of this, and it is also captured in the audit logs).
-    - You can change this to only allow select users/teams (or no one) to bypass secret scanning push protection.
-7. Note that you can define your own **Custom patterns** from this page to scan for secrets that don't correspond to a known provider pattern.
+    - In Private and internal repositories in organizations using GitHub Enterprise Cloud with GitHub Advanced Security enabled, you can change this to only allow select users/teams (or no one) to bypass secret scanning push protection.
 
 <details>
   <img src="images/lab-1-3-1.png"/>
