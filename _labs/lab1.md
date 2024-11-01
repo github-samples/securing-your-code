@@ -7,7 +7,7 @@ Welcome! In this lab, you will be introduced to GitHub Advanced Security (GHAS) 
 
 ## Forking the repository
 
-In this excerise, you will fork a repository with code from which you can work to test our the GHAS capabilities.
+In this exercise, you will fork a repository with code from which you can work to test our the GHAS capabilities.
 
 1. Navigate to [https://github.com/Ignite-GHAS-Workshop/ghas-workshop-repo](https://github.com/Ignite-GHAS-Workshop/ghas-workshop-repo) in your browser.
 2. Click the **Fork** button in the upper right corner of the page.
