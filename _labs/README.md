@@ -6,4 +6,3 @@
 4. [Lab 4 - Hands-on with Dependency Review (blocking vulnerable dependencies from entering codebase)](./lab4.md)
 5. [Lab 5 - Hands-on with Secret Scanning (secret scanning with push protections)](./lab5.md)
 6. [Extra credit: Advanced CodeQL Setup](./lab6-ec.md)
-7. [Extra credit: Custom Patterns for Secret Scanning](./lab7-ec.md)
