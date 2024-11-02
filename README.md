@@ -1,11 +1,11 @@
 
-<h1 align="center">Securing your code with GitHub Advanced Security</h1>
+<h1 align="center">LAB410: Found means fixed: Diminish security debt with GitHub Advanced Security</h1>
 
-<h5 align="center">
-  <img src="https://github.com/user-attachments/assets/6462fa90-6332-4e2b-8f34-ecd0b3932596" alt="Securing your code with GitHub Advanced Security" width="50%">
-</h5>
+![LAB410: Found means fixed: Diminish security debt with GitHub Advanced Security](./_labs/images/logo.png)
 
-<h5 align="center"><a href="https://github.com/joshjohanning">@joshjohanning</a> <a href="https://github.com/mickeygousset">@mickeygousset</a></h3>
+<h5 align="center"><a href="https://github.com/joshjohanning">@joshjohanning</a> <a href="https://github.com/mickeygousset">@mickeygousset</a>
+<a href="https://github.com/writingpanda">@writingpanda</a>
+<a href="https://github.com/felickz">@felickz</a></h3>
 
 <p align="center">
   <a href="#workshop-labs">Workshop Labs</a>
@@ -13,7 +13,7 @@
 </p>
 
 - **Who is this for**: Enterprise - Engineering Leadership, Enterprise - Developers, Open Source Developers or Maintainers, Security Professionals, Startups, Security Leadership, Educators
-- **What you'll learn**: Here at GitHub, we like to say that "found means fixed." That's because when issues are found they can more easily be fixed. In this workshop you'll dive into a repository filled with security alerts and begin to remediate them using GitHub Advanced Security (GHAS) and Dependabot, effectively maintaining code integrity. You'll also encounter and resolve a few security issues using GitHub Codespaces and GitHub Copilot. The end goal? To learn and develop strategies to motivate your developers to turn reactive fixes into proactive security habits.
+- **What you'll learn**: Here at GitHub, we like to say that "found means fixed." That's because when issues are found they can more easily be fixed. In this workshop you'll dive into a repository filled with security alerts and begin to remediate them using GitHub Advanced Security (GHAS) and Dependabot, effectively maintaining code integrity. You'll also encounter and resolve a few security issues using Copilot Autofix. The end goal? To learn and develop strategies to motivate your developers to turn reactive fixes into proactive security habits.
 
 ---
 
@@ -64,14 +64,6 @@ This lab will have you utilize Secret Scanning with Push Protection to prevent s
 This open-ended extra credit lab will have you switch to the advanced CodeQL setup.
 
 - Get started here - [Extra Credit Lab 1](./_labs/lab6-ec.md)
-
----
-
-### Extra Credit: Custom Patterns for Secret Scanning
-
-This open-ended extra credit lab will have you create a custom secret scanning pattern.
-
-- Get started here - [Extra Credit Lab 2](./_labs/lab7-ec.md)
 
 ---
 
