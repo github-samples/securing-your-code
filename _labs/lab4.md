@@ -12,7 +12,7 @@ First, let's add the dependency review action workflow.
 4. Under the **Dependency Review** workflow, click **Configure**.
 
 <details>
-  <img src="images/lab-4-1-1.png"/>
+  ![image](images/lab-4-1-1.png)
 </details>
 
 5. Review the action and its defaults on line 32-39. This action can also block specific open source license types.
@@ -20,13 +20,13 @@ First, let's add the dependency review action workflow.
 7. Since we have a ruleset, we have to create a branch and merge this to main via pull request. Create a branch and commit (**Propose changes**) the changes.
 
 <details>
-  <img src="images/lab-4-1-2.png"/>
+  ![image](images/lab-4-1-2.png)
 </details>
 
 8. On the next screen, use the Copilot icon in the formatting bar to generate a pull request description.
 
 <details>
-  <img src="images/lab-4-1-3.png"/>
+  ![image](images/lab-4-1-3.png)
 </details>
 
 9. Click **Create pull request**.
@@ -34,7 +34,7 @@ First, let's add the dependency review action workflow.
     - You will notice that the Dependency Review workflow ran against this PR and didn't report any issues.
 
 <details>
-  <img src="images/lab-4-1-4.png"/>
+  ![image](images/lab-4-1-4.png)
 </details>
 
 11. Merge the PR once the code scanning completes.
@@ -46,7 +46,7 @@ First, let's add the dependency review action workflow.
 17. Search for `dependency-review` and add it (it should show up under **suggestions**).
 
 <details>
-  <img src="images/lab-4-1-5.png"/>
+  ![image](images/lab-4-1-5.png)
 </details>
 
 18. Save the changes to the ruleset.
@@ -66,7 +66,7 @@ Now, let's attempt to add a vulnerable dependency to the codebase and test out t
 ```
 
 <details>
-  <img src="images/lab-4-2-1.png"/>
+  ![image](images/lab-4-2-1.png)
 </details>
 
 6. Click the **Commit changes** button.
@@ -77,7 +77,7 @@ Now, let's attempt to add a vulnerable dependency to the codebase and test out t
 11. It should make a comment to the pull request with a note that it found a vulnerable package dependency. In fact, adding this one package would introduce 3 new vulnerabilities to our codebase.
 
 <details>
-  <img src="images/lab-4-2-2.png"/>
+  ![image](images/lab-4-2-2.png)
 </details>
 
 12. Also, the status check will be marked as failed, preventing the pull request from being merged.
