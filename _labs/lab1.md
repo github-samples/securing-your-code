@@ -2,8 +2,10 @@
 
 Welcome! In this lab, you will be introduced to GitHub Advanced Security (GHAS) and its features. You will use the Juice Shop sample repository to enable the GHAS features, manage alerts, and learn how GitHub Advanced Security can keep vulnerabilities out of your code in the first place.
 
+<!--
 > [!TIP]
 > We recommend opening up two browser windows, one with the lab and one with the working copy of your repo!
+-->
 
 ## Forking the repository
 
@@ -33,7 +35,10 @@ Although Dependabot isn't part of the GitHub Advanced Security product suite, it
     - Note: there is a [maximum number of pull requests that this feature will create (10)](https://docs.github.com/en/enterprise-cloud@latest/code-security/dependabot/working-with-dependabot/troubleshooting-dependabot-errors#dependabot-cannot-open-any-more-pull-requests).
 
 <details>
-  <img src="images/lab-1-1-1.png"/>
+
+![image](./images/lab-1-1-1.png) 
+
+<img src="images/lab-1-1-1.png"/>
 </details>
 
 ### Exercise 2: Enable Code Scanning
