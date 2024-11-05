@@ -8,13 +8,13 @@ Now that we have all of the security feature enabled, let's review the security 
 2. Click **Dependabot** under the **Vulnerability alerts** heading.
 
 <details>
-  <img src="images/lab-2-1-1.png"/>
+  ![image](images/lab-2-1-1.png)
 </details>
 
 3. You should see a number of Dependabot alerts with various severities. Click on one of the alerts to see more information about it.
 
 <details>
-  <img src="images/lab-2-1-2.png"/>
+  ![image](images/lab-2-1-2.png)
 </details>
 
 4. When reviewing a Dependabot alert, you can see the following information (see if you can locate this information in the alert you opened):
@@ -30,7 +30,7 @@ Now that we have all of the security feature enabled, let's review the security 
    - The alert timeline (for example, it should show that Dependabot just recently opened the alert. Once you close an alert, it will show who and when closed it here too).
 
 <details>
-  <img src="images/lab-2-1-3.png"/>
+  ![image](images/lab-2-1-3.png)
 </details>
 
 5. You can manually close an alert by clicking on the **Dismiss alert** button in the upper right hand corner. It's not recommended to close alerts manually, but there may be times where this is helpful (for example, the code that contains the alert is not used).
@@ -53,14 +53,14 @@ Now that we have all of the security feature enabled, let's review the security 
     - Reviewing the **Critical** and **High** security alerts is another great place to start when prioritizing.
 
 <details>
-  <img src="images/lab-2-1-4.png"/>
+  ![image](images/lab-2-1-4.png)
 </details>
 
 9. If you put your cursor in the search box (should have `is:open` by default), there are additional filter options. Some of the common filter options are **scope** (runtime or development) and **has** (for example, `has:patch`).
 10. Update the search query to `is:open has:patch`. This will filter out all of the alerts that don't have a patch available and only show alerts where there is a non-vulnerable version to upgrade to.
 
 <details>
-  <img src="images/lab-2-1-5.png"/>
+  ![image](images/lab-2-1-5.png)
 </details>
 
 
@@ -69,13 +69,13 @@ Now that we have all of the security feature enabled, let's review the security 
 12.  Add a rule to snooze any alerts that do not have a fix available.  Choose the "gear" icon and select the `New rule` button.  Name the rule `Snooze when no patch available`, add a target metadata for all npm packages: `ecosystem:npm` and ensure the `Dismiss Alerts` - `Until patch is available` is selected.  Next, select `Create rule`.
 
 <details>
-  <img src="images/lab-2-1-6.png"/>
+  ![image](images/lab-2-1-6.png)
 </details>
 
 13. Navigating back to the **Security** tab /  **Dependabot** under the **Vulnerability alerts** heading. You will see `1 Closed` heading.  Select this to find your alert `Command Injection in marsdb` without any fix has now been `Dismissed` as `auto-dismissed`.  The audit log will note `Repository rule created and Snooze when no patch available was applied`
 
 <details>
-  <img src="images/lab-2-1-7.png"/>
+  ![image](images/lab-2-1-7.png)
 </details>
 
 ## Exercise 2: Reviewing Code Scanning alerts
@@ -84,7 +84,7 @@ Now that we have all of the security feature enabled, let's review the security 
 2. We should have a number of alerts. If you don't see any alerts yet, skip ahead to the next exercise and come back to this one. More than likely, the code scanning workflow hasn't finished yet (it takes between 2-5 minutes to run).
 
 <details>
-  <img src="images/lab-2-2-1.png"/>
+  ![image](images/lab-2-2-1.png)
 </details>
 
 3. If there are code scanning alerts, spend a few moments reviewing them. We can **filter/sort** by severity, tool, language, and a few other options, just like with Dependabot alerts.
@@ -92,7 +92,7 @@ Now that we have all of the security feature enabled, let's review the security 
 5. To use the autofilter filter, paste this into the search box: `is:open branch:main autofilter:true` (or type/select it by hand).
 
 <details>
-  <img src="images/lab-2-2-2.png"/>
+  ![image](images/lab-2-2-2.png)
 </details>
 
 6. Scroll down and let's click on one of the SQL injection alerts. These can be found by searching for the title **Database query built from user-controlled sources**.
@@ -107,7 +107,7 @@ Now that we have all of the security feature enabled, let's review the security 
    - The affected branch
 
 <details>
-  <img src="images/lab-2-2-3.png"/>
+  ![image](images/lab-2-2-3.png)
 </details>
 
 8. Click on the **Show paths** link to review the vulnerability from the source to the sink.
@@ -125,7 +125,7 @@ Now that we have all of the security feature enabled, let's review the security 
     - The nice thing with code scanning alerts (just like Dependabot alerts) is that once you merge the code that resolves an alert, the alert will be automatically closed. This is because the alert is no longer present in the code.
 
 <details>
-  <img src="images/lab-2-2-4.png"/>
+  ![image](images/lab-2-2-4.png)
 </details>
 
 15. We will merge this in change in. But first, we have to wait for the CodeQL workflow to finish running to ensure we aren't introducing any *new* vulnerabilities into the codebase. The workflow run will take 2-5 minutes.
@@ -148,7 +148,7 @@ Now that we have all of the security feature enabled, let's review the security 
 2. Under the **Security** tab in the repo, click on the **Secret scanning** view. This will show all of the secret scanning alerts. (This should be empty for you.)
 
 <details>
-  <img src="images/lab-2-3-1.png"/>
+  ![image](images/lab-2-3-1.png)
 </details>
 
 3. Viewing a secret scanning alert shows details about the leak
@@ -158,14 +158,14 @@ Now that we have all of the security feature enabled, let's review the security 
     - If you re-write history, the secret will still be valid and could be used by an attacker. Also, re-writing history modifies commit hashes and can make traceability more difficult.
 
 <details>
-  <img src="images/lab-2-3-4.png"/>
+  ![image](images/lab-2-3-4.png)
 </details>
 
 4. If you view an alert and choose **Verify secret** and this time, it says **secret inactive**. This is a good candidate to **Close as** --> **Revoked**.
     - Unlike Dependabot alerts and Code Scanning alerts, secret scanning alerts are not automatically closed when the secret is removed from the code - whether by a new commit or by re-writing history. This is because the secret was exposed and you don't know who may have seen it. So, you have to manually close the alert once you revoke the token.
 
 <details>
-  <img src="images/lab-2-3-2.png"/>
+  ![image](images/lab-2-3-2.png)
 </details>
 
 

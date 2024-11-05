@@ -38,7 +38,7 @@ Although Dependabot isn't part of the GitHub Advanced Security product suite, it
 
 ![image](./images/lab-1-1-1.png) 
 
-<img src="images/lab-1-1-1.png"/>
+![image](images/lab-1-1-1.png)
 </details>
 
 ### Exercise 2: Enable Code Scanning
@@ -50,19 +50,19 @@ Although Dependabot isn't part of the GitHub Advanced Security product suite, it
     - By default, it will scan the JavaScript code, use the default CodeQL queries (for highest precision), and scan the default branch on push, pull request, and on a weekly schedule.
 
 <details>
-  <img src="images/lab-1-2-1.png"/>
+  ![image](images/lab-1-2-1.png)
 </details>
   
 4. Click the **Enable CodeQL** button to save the settings and enable Code Scanning.
 
 <details>
-  <img src="images/lab-1-2-2.png"/>
+  ![image](images/lab-1-2-2.png)
 </details>
   
 5. Ensure that **Copilot Autofix** is enabled (in the **Code Scanning --> Tools** section).
 
 <details>
-  <img src="images/lab-1-2-3.png"/>
+  ![image](images/lab-1-2-3.png)
 </details>
 
 > [!NOTE]  
@@ -82,7 +82,7 @@ Although Dependabot isn't part of the GitHub Advanced Security product suite, it
     - In Private and internal repositories in organizations using GitHub Enterprise Cloud with GitHub Advanced Security enabled, you can change this to only allow select users/teams (or no one) to bypass secret scanning push protection.
 
 <details>
-  <img src="images/lab-1-3-1.png"/>
+  ![image](images/lab-1-3-1.png)
 </details>
 
 ## Summary

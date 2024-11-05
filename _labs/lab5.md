@@ -20,7 +20,7 @@ Let's use Secret Scanning with push protections to prevent secrets from entering
 13. Push protection should detect the GitHub personal access token and block the push - great!
 
 <details>
-  In the UI:</br><img src="images/lab-5-1-1.png"/></br></br>
+  In the UI:</br>![image](images/lab-5-1-1.png)</br></br>
 </details>
 
 14. Depending on how the settings are configured, we could bypass the push protection and push the secret to the repository. But, we don't want to do that! 🙅‍♂️ Repository admins and organization owners would receive an email notification if we did.
