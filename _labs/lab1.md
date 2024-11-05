@@ -11,10 +11,10 @@ Welcome! In this lab, you will be introduced to GitHub Advanced Security (GHAS) 
 
 In this exercise, you will fork a repository with code from which you can work to test our the GHAS capabilities.
 
-1. Navigate to +++[https://github.com/Ignite-GHAS-Workshop/ghas-workshop-repo](https://github.com/Ignite-GHAS-Workshop/ghas-workshop-repo)+++ in your browser.
+1. Navigate to +++https://github.com/Ignite-GHAS-Workshop/ghas-workshop-repo+++ in your browser.
 2. Click the green **Use this template** button in the upper right corner of the page.
 3. Create a new repository in our organization by choosing Owner as **Ignite24-Labs** in the dropdown.  
-4. Give the repository a unique name `my-ghas-workshop-repo-xyz`.  Click the green link below for inspiration on a unique repo name 😉.
+4. Give the repository a unique name **my-ghas-workshop-repo-xyz**.  Click the green link below for inspiration on a unique repo name 😉.
 5. Make sure you switch it to visibility **Private** so your work does not conflict with other attendees!  Now click **Create repository**.
 6. The page will refresh after a few seconds where you can now see the code we will be working with.  
 
