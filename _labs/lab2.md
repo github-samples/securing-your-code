@@ -36,14 +36,14 @@ Now that we have all of the security feature enabled, let's review the security 
 5. You can manually close an alert by clicking on the **Dismiss alert** button in the upper right hand corner. It's not recommended to close alerts manually, but there may be times where this is helpful (for example, the code that contains the alert is not used).
     - If you resolve an alert by upgrading to a non-vulnerable version, Dependabot will automatically close the alert!
 6. Go back a page and return to the list of Dependabot alerts.
-7. Click on the `Command Injection in marsdb` alert. You will note that this alert does not have a non-vulnerable version to upgrade to.
+7. Click on the **Command Injection in marsdb** alert. You will note that this alert does not have a non-vulnerable version to upgrade to.
     - If this were a real application, you would need to evaluate your risk to keeping this package in place, migrate to a different package, or write the functionality in-house.
 8. Go back a page and return to the list of Dependabot alerts.
-9. Click on the `Verification Bypass in jsonwebtoken` alert. This alert *does* have a non-vulnerable version to upgrade to.
+9. Click on the **Verification Bypass in jsonwebtoken** alert. This alert *does* have a non-vulnerable version to upgrade to.
 10. If Dependabot has finished running, you should see a **Review security update** button attempt. If you see it, click it.
     - If you don't see it, skip to the next step. You can return to this step later after Dependabot finishes its initial run.
     - Review the PR that Dependabot created.
-    - In the **Files changed** tab, you should see it upgrading the `package.json` file.
+    - In the **Files changed** tab, you should see it upgrading the **package.json** file.
     - Back on the **Conversation** tab, you can see that the compatibility score is pretty low - this is an indication that you would likely going to have to make code changes to accept this PR.
     - Dependabot security updates is a great feature because assuming your build and tests pass, you can merge the PR and automatically close the alert.
 11. Navigate **back** to the **Dependabot** alerts page and let's take a look at the list of Dependabot alerts one final time.
@@ -66,13 +66,13 @@ Now that we have all of the security feature enabled, let's review the security 
 
 11. Auto-triage your alerts allows you control over how Dependabot opens pull requests, ignores false positives and snoozes alerts. Navigate to  the **Settings** tab (the icon of the gear) in the repo, back to **Code Scanning**, then find **Dependabot rules** underneath **Dependabot**.
 
-12.  Add a rule to snooze any alerts that do not have a fix available.  Choose the "gear" icon and select the `New rule` button.  Name the rule `Snooze when no patch available`, add a target metadata for all npm packages: `ecosystem:npm` and ensure the `Dismiss Alerts` - `Until patch is available` is selected.  Next, select `Create rule`.
+12.  Add a rule to snooze any alerts that do not have a fix available.  Choose the "gear" icon and select the **New rule** button.  Name the rule `Snooze when no patch available`, add a target metadata for all npm packages: `ecosystem:npm` and ensure the **Dismiss Alerts - Until patch is available** is selected.  Next, select **Create rule**.
 
 <details>
   ![image](images/lab-2-1-6.png)
 </details>
 
-13. Navigating back to the **Security** tab /  **Dependabot** under the **Vulnerability alerts** heading. You will see `1 Closed` heading.  Select this to find your alert `Command Injection in marsdb` without any fix has now been `Dismissed` as `auto-dismissed`.  The audit log will note `Repository rule created and Snooze when no patch available was applied`
+13. Navigating back to the **Security** tab /  **Dependabot** under the **Vulnerability alerts** heading. You will see **1 Closed** heading.  Select this to find your alert **Command Injection in marsdb** without any fix has now been **Dismissed** as **auto-dismissed**.  The audit log will note **Repository rule created and Snooze when no patch available was applied**
 
 <details>
   ![image](images/lab-2-1-7.png)
@@ -121,7 +121,7 @@ Now that we have all of the security feature enabled, let's review the security 
 11. It will take a little time (30-60s) to generate a suggestion. Wait for it to finish.
 12. If you're happy with the suggestion, click the **Commit to a new branch** button.
 13. Accept the defaults and click **Commit change**.
-14. This will create a `draft` pull request with the fix for the vulnerability. In a real world example, assuming your build and tests pass, you would move the PR out of a draft state, having someone on your team review it, and then merge the change.
+14. This will create a **draft** pull request with the fix for the vulnerability. In a real world example, assuming your build and tests pass, you would move the PR out of a draft state, having someone on your team review it, and then merge the change.
     - The nice thing with code scanning alerts (just like Dependabot alerts) is that once you merge the code that resolves an alert, the alert will be automatically closed. This is because the alert is no longer present in the code.
 
 <details>

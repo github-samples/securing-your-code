@@ -32,7 +32,7 @@ models.sequelize.query(`SELECT * FROM Users WHERE email = '${req.body.email || '
 6. Click the green **Commit Changes** button on the top right of the file view.
 7. Keep the commit message the same, but feel free to add a description.
 8. Select the **Create a new branch for this commit and start a pull request** radio button.
-9. Keep the branch name at the default, which should be your GitHub handle followed by `-patch-1`.
+9. Keep the branch name at the default, which should be your GitHub handle followed by **-patch-1**.
 10. Click the **Propose changes** button.
 11. Click the **Create pull request** button at the bottom of the text field in the next view.
 12. The page will redirect to the pull request that was just created. Do not merge the pull request yet, as we want to see the code scanning results first.
