@@ -143,31 +143,36 @@ Now that we have all of the security feature enabled, let's review the security 
 
 ## Exercise 3: Reviewing Secret Scanning alerts
 
-1. Since this is a brand new fork of a public repo, you will not have any secrets detected.  The next few steps we will review what you would see if we had any secrets detected (optional steps in Lab 5.)
-
-2. Under the **Security** tab in the repo, click on the **Secret scanning** view. This will show all of the secret scanning alerts. (This should be empty for you.)
-
-<details>
-  ![image](images/lab-2-3-1.png)
-</details>
-
-3. Viewing a secret scanning alert shows details about the leak
+1. Under the **Security** tab in the repo, click on the **Secret scanning** --> **Default** option. This will show all of the default secret scanning alerts.
+2. You should see a number of alerts. For example, there should be a **GitHub Personal Access token alert**. Click it.
     - This page shows where in the code the secret was discovered (if there were multiple locations, it would list them all).
     - If a secret is found in the code, we would want to revoke manually in the designated service.
     - It's recommended to revoke the secret instead of rewriting history because the secret was exposed and you don't know who may have seen it.
     - If you re-write history, the secret will still be valid and could be used by an attacker. Also, re-writing history modifies commit hashes and can make traceability more difficult.
 
 <details>
-  ![image](images/lab-2-3-4.png)
+  ![image](images/lab-2-3-1.png)
 </details>
 
-4. If you view an alert and choose **Verify secret** and this time, it says **secret inactive**. This is a good candidate to **Close as** --> **Revoked**.
+3. You can click on **Verify secret**. It will say it's not currently valid on `github.com`, but that doesn't mean it doesn't come from another GitHub instance (such as GitHub Enterprise Server).
+4. Go back to list of secret scanning alerts. Click on the **Google API key** alert.
+5. Click on **Verify secret** again. This time, it should say **secret inactive**. This is a good candidate to **Close as** --> **Revoked** (click the **Close as** button in the upper right to do so). Do this.
     - Unlike Dependabot alerts and Code Scanning alerts, secret scanning alerts are not automatically closed when the secret is removed from the code - whether by a new commit or by re-writing history. This is because the secret was exposed and you don't know who may have seen it. So, you have to manually close the alert once you revoke the token.
+6. Navigate back to the **Default** secret alerts list.
+7. We can click **1 Closed** to see the alert we just closed.
 
 <details>
   ![image](images/lab-2-3-2.png)
 </details>
 
+8. Click on the **Experimental** secret scanning alerts option. This will show all of the alerts that are not high confidence, such as generic passwords, keys, and things such as HTTP bearer authentication header tokens found in the code.
+9. Let's click into one of the **Password** alerts.
+
+<details>
+  ![image](images/lab-2-3-3.png)
+</details>
+
+10. Just like high confidence secret scanning alerts, it shows where the secret was found in the code. The secret was found with AI, so it may or may not be a real secret or password. If it's not, we can close it manually and mark it as a false positive.
 
 ## Summary
 
