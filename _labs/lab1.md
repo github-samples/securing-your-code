@@ -26,6 +26,8 @@ In the following exercises, you will be guided through the process of enabling t
 
 Although Dependabot isn't part of the GitHub Advanced Security product suite, it is still an important tool to discuss from an overall security posture.
 
+Dependabot and Dependency Graph should already be turned on for your repository. If not, follow the steps below.
+
 1. We first want to turn on the security settings for the repository. Navigate to the **Settings** tab (the icon of the gear) in the repo.
 2. Click on the  **Code security** section.
 3. Click the **Enable** button next to the **Dependency Graph** setting. To enable Dependabot, we first have to enable the Dependency Graph. This allows Dependabot to ingest your package manifest files.
@@ -35,11 +37,12 @@ Although Dependabot isn't part of the GitHub Advanced Security product suite, it
     - Note: there is a [maximum number of pull requests that this feature will create (10)](https://docs.github.com/en/enterprise-cloud@latest/code-security/dependabot/working-with-dependabot/troubleshooting-dependabot-errors#dependabot-cannot-open-any-more-pull-requests).
 
 <details>
-
-![image](./images/lab-1-1-1.png) 
+![image](./images/lab-1-1-1.png)
 
 ![image](images/lab-1-1-1.png)
 </details>
+
+Once you are done turning on Dependabot features, the next thing we will need to do is turn on GitHub Advanced Security.
 
 ### Exercise 2: Enable Code Scanning
 
@@ -50,10 +53,10 @@ Although Dependabot isn't part of the GitHub Advanced Security product suite, it
 4. Underneath the **GitHub Advanced Security | Code scanning** heading, click the **Set up** button in the **CodeQL analysis** row.
 
 > [!NOTE]  
-> If you do not see the **Code scanning** heading on the **Code security** page after enabling **GitHub Advanced Security** -   you have likely not created your repo in the proper Organization.  Go back to the beginning of this lab and ensure you choose **Ignite24-Labs** value from the dropdown as the new repository **Owner** when you choose **Use this template** .
+> If you do not see the **Code scanning** heading on the **Code security** page after enabling **GitHub Advanced Security** - you have likely not created your repo in the proper Organization. Go back to the beginning of this lab and ensure you choose **Ignite24-Labs** value from the dropdown as the new repository **Owner** when you choose **Use this template**.
 
 5. There are two options: **Default** and **Advanced**. Select the **Default** option and review the settings.
-    - For this lab, we will use the **Default** setup which creates a managed Actions workflow (i.e. you will not see a file committed to the repo). You can use the Advanced option to manage your code scanning workflow as a GitHub Actions workflow YAML file committed to the repo. The **Default** option is a great option to get started quickly to enable code scanning in a repository without needing to commit any additional code.
+    - For this lab, we will use the **Default** setup, which creates a managed Actions workflow (i.e. you will not see a codeql.yaml file committed to the repo). You can use the Advanced option to manage your code scanning workflow as a GitHub Actions workflow YAML file committed to the repo. The **Default** option is a great option to get started quickly to enable code scanning in a repository without needing to commit any additional code.
     - By default, it will scan the JavaScript code, use the default CodeQL queries (for highest precision), and scan the default branch on push, pull request, and on a weekly schedule.
 
 <details>
@@ -73,21 +76,21 @@ Although Dependabot isn't part of the GitHub Advanced Security product suite, it
 </details>
 
 > [!NOTE]  
-> You don't need a Copilot license in order to use the Copilot features with GitHub Advanced Security. However, Copilot can certainly be helpful in resolving issues in your IDE by using Copilot chat to explain the vulnerability and how to fix it.
+> You do not need a Copilot license in order to use the Copilot features with GitHub Advanced Security. However, Copilot can certainly be helpful in resolving issues in your IDE by using Copilot chat to explain the vulnerability and how to fix it.
 
 8. Optionally, configure the **Check runs failure threshold** - by default, a pull request will be blocked if there are any high or higher security alerts.
 
 ### Exercise 3: Enable Secret Scanning
 
 1. Click on the **Enable** button to enable Secret Scanning.
-2. Check the box to **Scan for generic secrets**. This feature uses AI to find secrets/passwords that may be in your code that don't correspond to a known provider pattern.
+2. Check the box to **Scan for generic secrets**. This feature uses AI to find secrets/passwords that may be in your code that do not correspond to a known provider pattern.
 3. Click the **Enable** button next to the **Validity checks** setting. This feature checks if the secret is still valid for [specific partners](https://docs.github.com/en/enterprise-cloud@latest/code-security/secret-scanning/introduction/supported-secret-scanning-patterns#high-confidence-patterns), such as Azure, AWS, and, of course, GitHub. As an example, you can use this feature to check if a GitHub personal access token found in the repo is still valid and needs to be revoked.
-4. Click the **Enable** button next to the **Non-provider patterns** setting. This scans for patterns that don't correspond to partners but still have a common syntax, such as a MySQL or MongoDB connection string.
+4. Click the **Enable** button next to the **Non-provider patterns** setting. This scans for patterns that do not correspond to partners but still have a common syntax, such as a MySQL or MongoDB connection string.
 5. Click the **Enable** button next to the "Push protection" setting. This feature will block pushes that contain high-precision secrets. You can use this [chart](https://docs.github.com/en/enterprise-cloud@latest/code-security/secret-scanning/introduction/supported-secret-scanning-patterns#supported-secrets) to determine which types of secrets would be blocked with secret scanning push protection enabled.
 6. Optionally, configure **Who can bypass push protection for secret scanning**.
     - By default, as to not interrupt developers' workflows, anyone with write access to the repository can manually bypass a blocked push that contains secrets (administrators will be notified of this, and it is also captured in the audit logs).
     - In Private and internal repositories in organizations using GitHub Enterprise Cloud with GitHub Advanced Security enabled, you can change this to only allow select users/teams (or no one) to bypass secret scanning push protection.
-7. Note that you can define your own **Custom patterns** from this page to scan for secrets that don't correspond to a known provider pattern.
+7. Note that you can define your own **Custom patterns** from this page to scan for secrets that do not correspond to a known provider pattern.
 
 <details>
   ![image](images/lab-1-3-1.png)
