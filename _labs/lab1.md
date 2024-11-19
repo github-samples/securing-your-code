@@ -14,7 +14,7 @@ In this exercise, you will create a repository with code from which you can work
 1. Navigate to +++https://github.com/Ignite-GHAS-Workshop/ghas-workshop-repo+++ in your browser.
 2. Click the green **Use this template** button in the upper right corner of the page.
 3. Create a new repository in our organization by choosing Owner as **Ignite24-Labs** in the dropdown.  
-4. Give the repository a unique name **my-ghas-workshop-repo-xyz**.  Click the green link below for inspiration on a unique repo name 😉.
+4. Give the repository a unique name **my-ghas-workshop-repo-<my-unique-repo-name-here>**.  Click the green link below for inspiration on a unique repo name 😉.
 5. Make sure you switch it to visibility **Private** so your work does not conflict with other attendees!  Now click **Create repository**.
 6. The page will refresh after a few seconds where you can now see the code we will be working with.  
 
@@ -77,7 +77,7 @@ Once you are done turning on Dependabot features, the next thing we will need to
 > [!NOTE]  
 > You do not need a Copilot license in order to use the Copilot features with GitHub Advanced Security. However, Copilot can certainly be helpful in resolving issues in your IDE by using Copilot chat to explain the vulnerability and how to fix it.
 
-8. Optionally, configure the **Check runs failure threshold** - by default, a pull request will be blocked if there are any high or higher security alerts.
+7. Optionally, configure the **Check runs failure threshold** - by default, a pull request will be blocked if there are any high or higher security alerts.
 
 ### Exercise 3: Enable Secret Scanning
 
