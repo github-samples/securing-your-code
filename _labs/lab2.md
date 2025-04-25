@@ -8,12 +8,14 @@ Now that we have all of the security feature enabled, let's review the security 
 2. Click **Dependabot** under the **Vulnerability alerts** heading.
 
 <details>
-  ![image](images/lab-2-1-1.png)
+
+  ![alt text](image.png)
 </details>
 
 3. You should see a number of Dependabot alerts with various severities. Click on one of the alerts to see more information about it.
 
 <details>
+
   ![image](images/lab-2-1-2.png)
 </details>
 
@@ -25,11 +27,14 @@ Now that we have all of the security feature enabled, let's review the security 
    - The affected versions of the package
    - The fixed version (if there is one - sometimes there isn't a non-vulnerable version to upgrade to)
    - The dependency path (what file contains the vulnerable dependency)
+   - Is it a runtime or development dependency?
+   - Is it a direct or transitive dependency
    - The alert description
    - The alert recommendation (to upgrade or use a different package)
    - The alert timeline (for example, it should show that Dependabot just recently opened the alert. Once you close an alert, it will show who and when closed it here too).
 
 <details>
+
   ![image](images/lab-2-1-3.png)
 </details>
 
@@ -42,7 +47,7 @@ Now that we have all of the security feature enabled, let's review the security 
 9. Click on the **Verification Bypass in jsonwebtoken** alert. This alert *does* have a non-vulnerable version to upgrade to.
 10. If Dependabot has finished running, you should see a **Review security update** button attempt. If you see it, click it.
     - If you don't see it, skip to the next step. You can return to this step later after Dependabot finishes its initial run.
-    - Review the PR that Dependabot created.
+    - Review the PR that Dependabot created by clicking on the **Review security update**.
     - In the **Files changed** tab, you should see it upgrading the **package.json** file.
     - Back on the **Conversation** tab, you can see that the compatibility score is pretty low - this is an indication that you would likely going to have to make code changes to accept this PR.
     - Dependabot security updates is a great feature because assuming your build and tests pass, you can merge the PR and automatically close the alert.
@@ -53,6 +58,7 @@ Now that we have all of the security feature enabled, let's review the security 
     - Reviewing the **Critical** and **High** security alerts is another great place to start when prioritizing.
 
 <details>
+
   ![image](images/lab-2-1-4.png)
 </details>
 
@@ -60,21 +66,24 @@ Now that we have all of the security feature enabled, let's review the security 
 14. Update the search query to `is:open has:patch`. This will filter out all of the alerts that don't have a patch available and only show alerts where there is a non-vulnerable version to upgrade to.
 
 <details>
+
   ![image](images/lab-2-1-5.png)
 </details>
 
 
-15. Auto-triage your alerts allows you control over how Dependabot opens pull requests, ignores false positives and snoozes alerts. Navigate to  the **Settings** tab (the icon of the gear) in the repo, back to **Code Scanning**, then find **Dependabot rules** underneath **Dependabot**.
+15. Auto-triage your alerts allows you control over how Dependabot opens pull requests, ignores false positives and snoozes alerts. Navigate to  the **Settings** tab (the icon of the gear)  in the repo and then **Advanced Security** left sidecar, scroll to **Dependabot**, then find **Dependabot rules** underneath **Dependabot alerts**.
 
 16.  Add a rule to snooze any alerts that do not have a fix available.  Choose the "gear" icon and select the **New rule** button.  Name the rule `Snooze when no patch available`, add a target metadata for all npm packages: `ecosystem:npm` and ensure the **Dismiss Alerts - Until patch is available** is selected.  Next, select **Create rule**.
 
 <details>
+
   ![image](images/lab-2-1-6.png)
 </details>
 
 17. Navigating back to the **Security** tab /  **Dependabot** under the **Vulnerability alerts** heading. You will see **1 Closed** heading.  Select this to find your alert **Command Injection in marsdb** without any fix has now been **Dismissed** as **auto-dismissed**.  The audit log will note **Repository rule created and Snooze when no patch available was applied**
 
 <details>
+
   ![image](images/lab-2-1-7.png)
 </details>
 
@@ -84,6 +93,7 @@ Now that we have all of the security feature enabled, let's review the security 
 2. We should have a number of alerts. If you don't see any alerts yet, skip ahead to the next exercise and come back to this one. More than likely, the code scanning workflow hasn't finished yet (it takes between 2-5 minutes to run).
 
 <details>
+
   ![image](images/lab-2-2-1.png)
 </details>
 
@@ -92,10 +102,11 @@ Now that we have all of the security feature enabled, let's review the security 
 5. To use the autofilter filter, paste this into the search box: `is:open branch:main autofilter:true` (or type/select it by hand).
 
 <details>
+
   ![image](images/lab-2-2-2.png)
 </details>
 
-6. Scroll down and let's click on one of the SQL injection alerts. These can be found by searching for the title **Database query built from user-controlled sources**.
+6. Scroll down and let's click on one of the SQL injection alerts. These can be found by searching for the title `"Database query built from user-controlled sources"`.
 7. After clicking into one of the alerts, we should notice a few things:
    - The severity of the alert
    - The CWE(s) of the alert with a hyperlink
@@ -107,6 +118,7 @@ Now that we have all of the security feature enabled, let's review the security 
    - The affected branch
 
 <details>
+
   ![image](images/lab-2-2-3.png)
 </details>
 
@@ -122,9 +134,10 @@ Now that we have all of the security feature enabled, let's review the security 
 12. If you're happy with the suggestion, click the **Commit to a new branch** button.
 13. Accept the defaults and click **Commit change**.
 14. This will create a **draft** pull request with the fix for the vulnerability. In a real world example, assuming your build and tests pass, you would move the PR out of a draft state, having someone on your team review it, and then merge the change.
-    - The nice thing with code scanning alerts (just like Dependabot alerts) is that once you merge the code that resolves an alert, the alert will be automatically closed. This is because the alert is no longer present in the code.
+    - The nice thing with code scanning alerts (just like Dependabot alerts) is that once you merge the code and is scanned again that resolves an alert, the alert will be automatically closed. This is because the alert is no longer present in the code.
 
 <details>
+
   ![image](images/lab-2-2-4.png)
 </details>
 
@@ -154,21 +167,23 @@ Now that we have all of the security feature enabled, let's review the security 
   ![image](images/lab-2-3-1.png)
 </details>
 
-3. You can click on **Verify secret**. It will say it's not currently valid on `github.com`, but that doesn't mean it doesn't come from another GitHub instance (such as GitHub Enterprise Server).
+3. You can click on **Verify secret**. It will say it's not currently valid on **github.com**, but that doesn't mean it doesn't come from another GitHub instance (such as GitHub Enterprise Server). (clicking may not be there, since we enabled automatic visibility checked it may have been checked already, or it may even say the secret has been Publicly leaked).
 4. Go back to list of secret scanning alerts. Click on the **Google API key** alert.
-5. Click on **Verify secret** again. This time, it should say **secret inactive**. This is a good candidate to **Close as** --> **Revoked** (click the **Close as** button in the upper right to do so). Do this.
+5. Click on **Verify secret** again. This time, it should say **secret inactive** (or **Publicly leaked inactive secret**). This is a good candidate to **Close as** --> **Revoked** (click the **Close as** button in the upper right to do so). Do this.
     - Unlike Dependabot alerts and Code Scanning alerts, secret scanning alerts are not automatically closed when the secret is removed from the code - whether by a new commit or by re-writing history. This is because the secret was exposed and you don't know who may have seen it. So, you have to manually close the alert once you revoke the token.
 6. Navigate back to the **Default** secret alerts list.
 7. We can click **1 Closed** to see the alert we just closed.
 
 <details>
+
   ![image](images/lab-2-3-2.png)
 </details>
 
-8. Click on the **Experimental** secret scanning alerts option. This will show all of the alerts that are not high confidence, such as generic passwords, keys, and things such as HTTP bearer authentication header tokens found in the code.
+8. Click on the **Generic** secret scanning alerts option. This will show all of the alerts that are not high confidence, such as generic passwords, keys, and things such as HTTP bearer authentication header tokens found in the code.
 9. Let's click into one of the **Password** alerts.
 
 <details>
+
   ![image](images/lab-2-3-3.png)
 </details>
 
@@ -178,4 +193,4 @@ Now that we have all of the security feature enabled, let's review the security 
 
 Well done! You've learned how to review and triage alerts from Dependabot, code scanning, and secret scanning. And you even saw how you can use Copilot to automatically fix a code scanning alert. In the next lab, we are going to to get hands-on with code scanning, repository rulesets, and Copilot, to see how we can both prevent and fix vulnerabilities in our code base.
 
-➡️ Head back to the [labs](README.md) page to continue on to the next lab.
+➡️ Head to the next [lab](lab3.md).

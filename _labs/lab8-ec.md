@@ -5,7 +5,7 @@ We are just using the out of the box secret scanning settings. Perhaps you are i
 
 ## Exercise
 
-Your assignment here is to implement a secret scanning custom pattern. You can start under the **Settings** --> **Code Security** page.
+Your assignment here is to implement a secret scanning custom pattern. You can start under the **Settings** --> **Advanced Security** page.
 
 If you are looking for an example of what to search for, we suggest creating a pattern for finding a credit card! A developer may or may not have accidentally committed customer credit card numbers to the repository and we need to alert on this.
 

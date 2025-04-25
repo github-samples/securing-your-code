@@ -1,11 +1,11 @@
 
-<h1 align="center">LAB410: Found means fixed: Diminish security debt with GitHub Advanced Security</h1>
-
-![LAB410: Found means fixed: Diminish security debt with GitHub Advanced Security](./_labs/images/logo.png)
+<h1 align="center">Securing your code with GitHub</h1>
 
 <h5 align="center"><a href="https://github.com/joshjohanning">@joshjohanning</a> <a href="https://github.com/mickeygousset">@mickeygousset</a>
 <a href="https://github.com/writingpanda">@writingpanda</a>
-<a href="https://github.com/felickz">@felickz</a></h3>
+<a href="https://github.com/felickz">@felickz</a>
+<a href="https://github.com/tspascoal">@tspascoal</a>
+</h5>
 
 <p align="center">
   <a href="#workshop-labs">Workshop Labs</a>
@@ -14,6 +14,9 @@
 
 - **Who is this for**: Enterprise - Engineering Leadership, Enterprise - Developers, Open Source Developers or Maintainers, Security Professionals, Startups, Security Leadership, Educators
 - **What you'll learn**: Here at GitHub, we like to say that "found means fixed." That's because when issues are found they can more easily be fixed. In this workshop you'll dive into a repository filled with security alerts and begin to remediate them using GitHub Advanced Security (GHAS) and Dependabot, effectively maintaining code integrity. You'll also encounter and resolve a few security issues using Copilot Autofix. The end goal? To learn and develop strategies to motivate your developers to turn reactive fixes into proactive security habits.
+
+
+See [requirements](_labs/requirements.md) to see what is needed to run this lab.
 
 ---
 
