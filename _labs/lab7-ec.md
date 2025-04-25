@@ -26,4 +26,3 @@ Your goal is to have a CodeQL workflow committed that successfully scans your co
 
 In this lab, you have learned how to set up and configure advanced code scanning. There is no definitive answer as to whether the default or advanced setup is better. The default setup is ideal for quickly configuring CodeQL on repositories without requiring code changes or PR approvals. However, the advanced setup offers more customization and flexibility.
 
-➡️ Head to the next [extra credit lab](lab8-ec.md).

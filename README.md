@@ -16,8 +16,6 @@
 - **What you'll learn**: Here at GitHub, we like to say that "found means fixed." That's because when issues are found they can more easily be fixed. In this workshop you'll dive into a repository filled with security alerts and begin to remediate them using GitHub Advanced Security (GHAS) and Dependabot, effectively maintaining code integrity. You'll also encounter and resolve a few security issues using Copilot Autofix. The end goal? To learn and develop strategies to motivate your developers to turn reactive fixes into proactive security habits.
 
 
-See [requirements](_labs/requirements.md) to see what is needed to run this lab.
-
 ---
 
 ## Workshop Labs

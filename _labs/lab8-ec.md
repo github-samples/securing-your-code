@@ -20,4 +20,3 @@ Create a pattern, run a dry-run, and hopefully you find the pattern! If so, save
 
 In this lab, you should have identified the credit card number that was accidentally committed. Custom secret scanning patterns offer an excellent way to implement additional scanning patterns that are crucial for your organization!
 
-➡️ Head back to the [labs](README.md) page.
