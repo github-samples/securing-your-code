@@ -101,4 +101,4 @@ This project is licensed under the terms of the MIT open source license. Please 
 
 ### OWASP Juice Shop
 
-This lab uses and includes sample code from the OWASP Juice Shop project. The Juice Shop is Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors. PPlease refer to the [LICENSE](./LICENSE) for the full terms.
+This lab uses and includes sample code from the OWASP Juice Shop project. The Juice Shop is Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors. Please refer to the [LICENSE](./LICENSE) for the full terms.
