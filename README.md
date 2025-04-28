@@ -91,3 +91,14 @@ This open-ended extra credit lab will have you create a custom secret scanning p
 
 - [GitHub Docs - About GitHub Advanced Security](https://docs.github.com/en/get-started/learning-about-github/about-github-advanced-security)
 - [GitHub Security Learning Pathway](https://resources.github.com/learn/pathways/security/)
+
+
+## License 
+
+### Securing your code with GitHub
+
+This project is licensed under the terms of the MIT open source license. Please refer to [MIT](./LICENSE) for the full terms.
+
+### OWASP Juice Shop
+
+This lab uses and includes sample code from the OWASP Juice Shop project. The Juice Shop is Copyright (c) 2014-2024 Bjoern Kimminich & the OWASP Juice Shop contributors. Please refer to the [LICENSE](./LICENSE) for the full terms.
