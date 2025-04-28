@@ -19,8 +19,8 @@ In this exercise, you will create a repository with code from which you can work
 
 1. [] Navigate to +++https://github.com/enterprises/skillable-events/sso+++
 2. [] Click on the green **Continue** button when the **Single sign-on to Skillable Events** page appears
-3. [] Enter the your username +++@lab.VirtualMachine(Win11-Pro-Base-VM).Username+++
-4. [] Enter your password +++@lab.VirtualMachine(Win11-Pro-Base-VM).Password+++
+3. [] Enter the your username +++@lab.CloudPortalCredential(User1).Username+++
+4. [] Enter your password +++@lab.CloudPortalCredential(User1).Password+++
 5. [] Navigate to +++https://github.com/github-samples/securing-your-code+++ in your browser.
 6. [] Click the green **Use this template** button in the upper right corner of the page.
 7. [] Create a new repository in our organization by choosing **Microsoft-Build-2025** in the owner dropdown.
