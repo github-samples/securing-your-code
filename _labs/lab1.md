@@ -39,7 +39,7 @@ Although Dependabot isn't part of the GitHub Advanced Security product suite, it
 Dependabot and Dependency Graph should already be turned on for your repository. If not, follow the steps below.
 
 1. [] We first want to turn on the security settings for the repository. Navigate to the **Settings** tab (the icon of the gear) in the repo.
-2. [] Click on the  **Advanced Security** section.
+2. [] Click on the  **Code Security** section.
 3. [] Ensure the Dependency Graph is enabled (scroll down to **Code Security** group).  This will be indicated by a red **Disable** button.  If there is a black **Enable** button, click it to enable the **Dependency Graph** setting. To enable Dependabot, we first have to enable the Dependency Graph. This allows Dependabot to ingest your package manifest files.
 4. [] Ensure the Dependabot alerts are enabled.  This will be indicated by a red **Disable** button.  If there is a black **Enable** button, click it to enable the **Dependabot alerts** setting. This feature will create alerts for vulnerable dependencies found in your repository.
 5. [] Click the **Enable** button next to the **Dependabot security updates** setting.
@@ -55,9 +55,10 @@ Once you are done turning on Dependabot features, the next thing we will need to
 
 ### Exercise 2: Enable Code Security
 
-1. [] Next, let's enable **Code Scanning with CodeQL**. These settings are also under the **Advanced Security** settings page.
-2. [] Ensure **Code Security** is enabled.  This will be indicated by a red **Disable** button.  If there is a black **Enable** button, click it to enable **Code Security**.
-3. [] Underneath the **Code Security | Tools** heading, click the **Set up** button in the **CodeQL analysis** row.
+1. [] Scroll down to the **GitHub Advanced Security** section and make sure it's enabled.  If there is a black **Enable** button, click it to enable the **GitHub Advanced Security** setting.
+2. [] Click on the **Enabled GitHub Advanced Security for this repository** on the confirmation **Enable GitHub Advanced Security for this repository?** dialog window.
+3. [] Next, let's enable **Code Scanning with CodeQL**. These settings are also under the **Code Security** settings page.
+4. [] Underneath the **Code Security | Tools** heading, click the **Set up** button in the **CodeQL analysis** row.
 
 > [!NOTE]  
 > If you do not see the **Code scanning** heading on the **Code security** page after enabling **Code Security** - you have likely not created your repo in the proper Organization. Go back to the beginning of this lab and ensure you choose **Microsoft-Build-2025** value from the dropdown as the new repository **Owner** when you choose **Use this template**.

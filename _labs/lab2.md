@@ -9,7 +9,7 @@ Now that we have all of the security feature enabled, let's review the security 
 
 <details>
 
-  ![alt text](image.png)
+  ![security alerts](images/lab-2-1-1.png)
 </details>
 
 3. [] You should see a number of Dependabot alerts with various severities. Click on one of the alerts to see more information about it.
@@ -19,7 +19,7 @@ Now that we have all of the security feature enabled, let's review the security 
   ![image](images/lab-2-1-2.png)
 </details>
 
-4. [] When reviewing a Dependabot alert, you can see the following information (see if you can locate this information in the alert you opened):
+4. When reviewing a Dependabot alert, you can see the following information (see if you can locate this information in the alert you opened):
    - The severity of the alert
    - The package name and version that is vulnerable
    - The severity of the vulnerability
@@ -71,7 +71,7 @@ Now that we have all of the security feature enabled, let's review the security 
 </details>
 
 
-15. [] Auto-triage your alerts allows you control over how Dependabot opens pull requests, ignores false positives and snoozes alerts. Navigate to  the **Settings** tab (the icon of the gear)  in the repo and then **Advanced Security** left sidecar, scroll to **Dependabot**, then find **Dependabot rules** underneath **Dependabot alerts**.
+15. [] Auto-triage your alerts allows you control over how Dependabot opens pull requests, ignores false positives and snoozes alerts. Navigate to  the **Settings** tab (the icon of the gear)  in the repo and then **Code Security** left sidecar, scroll to **Dependabot**, then find **Dependabot rules** underneath **Dependabot alerts**.
 
 16. []  Add a rule to snooze any alerts that do not have a fix available.  Choose the "gear" icon and select the **New rule** button.  Name the rule `Snooze when no patch available`, add a target metadata for all npm packages: `ecosystem:npm` and ensure the **Dismiss Alerts - Until patch is available** is selected.  Next, select **Create rule**.
 
@@ -141,7 +141,7 @@ Now that we have all of the security feature enabled, let's review the security 
   ![image](images/lab-2-2-4.png)
 </details>
 
-15. [] We will merge this in change in. But first, we have to wait for the CodeQL workflow to finish running to ensure we aren't introducing any *new* vulnerabilities into the codebase. The workflow run will take 2-5 minutes.
+15. [] We will merge this in change in. But first, we have to wait for the CodeQL workflow to finish running to ensure we aren't introducing any *new* vulnerabilities into the codebase. The workflow run will take 2-5 minutes (watch the running workflow in the Checks section to check when it's completed (circle changes from yellow to green and says "All Checks have passed")).
 16. [] Once the workflow finishes, click **Ready for review**. This moves the pull request out of the draft state.
 17. [] Afterwards, click **Merge pull request** and then **Confirm merge**.
     - After merging the code into the default branch, a code scan will run and once it finishes, the alert will be closed.
@@ -169,7 +169,7 @@ Now that we have all of the security feature enabled, let's review the security 
 
 3. [] You can click on **Verify secret**. It will say it's not currently valid on **github.com**, but that doesn't mean it doesn't come from another GitHub instance (such as GitHub Enterprise Server). (clicking may not be there, since we enabled automatic visibility checked it may have been checked already, or it may even say the secret has been Publicly leaked).
 4. [] Go back to list of secret scanning alerts. Click on the **Google API key** alert.
-5. [] Click on **Verify secret** again. This time, it should say **secret inactive** (or **Publicly leaked inactive secret**). This is a good candidate to **Close as** --> **Revoked** (click the **Close as** button in the upper right to do so). Do this.
+5. [] Click on **Verify secret** again. This time, it should say **secret inactive** (or **Publicly leaked inactive secret**). This is a good candidate to **Close as** --> **Revoked** (click the **Close as** button in the upper right to do so), select **Revoked** and click on **Close Alert**.
     - Unlike Dependabot alerts and Code Scanning alerts, secret scanning alerts are not automatically closed when the secret is removed from the code - whether by a new commit or by re-writing history. This is because the secret was exposed and you don't know who may have seen it. So, you have to manually close the alert once you revoke the token.
 6. [] Navigate back to the **Default** secret alerts list.
 7. [] We can click **1 Closed** to see the alert we just closed.
@@ -180,7 +180,7 @@ Now that we have all of the security feature enabled, let's review the security 
 </details>
 
 8. [] Click on the **Generic** secret scanning alerts option. This will show all of the alerts that are not high confidence, such as generic passwords, keys, and things such as HTTP bearer authentication header tokens found in the code.
-9. [] Let's click into one of the **Password** alerts.
+9. [] Let's click into one of the found **Generic** alerts.
 
 <details>
 

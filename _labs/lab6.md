@@ -13,7 +13,7 @@ The Security Overview can be used by anyone inside of an organization; it shows 
 > [!NOTE]
 > Security alerts for a repository are visible to people with write, maintain, or admin access to the repository and, when the repository is owned by an organization, organization owners. You can give additional teams and people access to the alerts.
 
-1. [] Navigate to the organization you created the repository for the lab. You can do so by **clicking on the org name** in the repository breadcrumbs in the upper left hand corner.
+1. [] Navigate to the **Microsoft-Build-2025** organization. You can do so by clicking on the **Microsoft-Build-2025**  in the repository breadcrumbs in the upper left hand corner.
     - You can also navigate to your orgs by clicking on your profile picture and "**Your organizations**"
 2. [] Click on the **Security** tab.
 3. [] Review (and click on!) the different views on the left-hand side:
@@ -32,14 +32,14 @@ The Security Overview can be used by anyone inside of an organization; it shows 
     - Being secure requires "constant vigilance"
 5. [] Navigate to the **Risk** view.
 6. [] On the right-hand side, click the **Teams ▾** button/dropdown.
-7. [] Click on the **all users** team - this team is only added to a different sample repo, so note how the total alerts changes.
-    - This can be really useful for a manager, architect, or developer to see which repositories assigned to the teams have security features enabled and how many alerts they are generating.
-8. [] At the bottom of the options on the left, you will see **Security Campaigns**.
+7. [] Click on the **members** team - this is going to be empty since the team has no repositories, so note how the total alerts changes.
+    - This can be really useful for a manager, architect, or developer to see which repositories assigned to the teams have security features enabled and how many alerts they are generating. In our case it's not useful at all.
+8. [] At the bottom of the options on the left, you will see **Campaigns**.
     - Security campaigns are a new feature designed to help administrators and security managers create targeted campaigns and track remediation progress effectively.
-9. [] ⚠️ Please don't create a new security campaign as to not introduce noise to your fellow attendees ⚠️, but click on the existing campaign here (**SQL injection (CWE-89)**) to check it out!
+9. [] Click on the existing campaign here (**SQL injection (CWE-89)**) to check it out!
     - How are we doing on our goal?
 
-> [!TIP] If your If your company is using GitHub Enterprise or GitHub Teams plan and is not yet using GitHub Secrets Protection, you can run a [secret risk assessement](https://docs.github.com/en/code-security/securing-your-organization/understanding-your-organizations-exposure-to-leaked-secrets/about-secret-risk-assessment) at no cost to understand exposure to data leaks and to get an overview of your organization's secret leak footprint. 
+> [!TIP] If your If your company is using GitHub Enterprise or GitHub Teams plan and is not yet using GitHub Secrets Protection, you can run a [secret risk assessment](https://docs.github.com/en/code-security/securing-your-organization/understanding-your-organizations-exposure-to-leaked-secrets/about-secret-risk-assessment) at no cost to understand exposure to data leaks and to get an overview of your organization's secret leak footprint. 
 
 ## Summary
 

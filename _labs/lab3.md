@@ -43,9 +43,9 @@ models.sequelize.query(`SELECT * FROM Users WHERE email = '${req.body.email || '
   ![image](images/lab-3-1-3.png)
 </details>
 
-10. [] CodeQL should find the vulnerability, so the check will fail. Also, we should see Copilot create us an autofix on the PR as a code suggestion change that we can review (and commit)
-11. [] It might take Copilot a few moments to create the autofix.
-12. [] Review the autofix - we can prevent a vulnerability from entering the repository now with a click of a button! 🎉 ⚠️⚠️ **But don't commit the suggestion yet.** ⚠️⚠️
+14. [] CodeQL should find the vulnerability, so the check will fail. Also, we should see Copilot create us an autofix on the PR as a code suggestion change that we can review (and commit)
+15. [] It might take Copilot a few moments to create the autofix.
+16. [] Review the autofix - we can prevent a vulnerability from entering the repository now with a click of a button! 🎉 ⚠️⚠️ **But don't commit the suggestion yet.** ⚠️⚠️
 
 <details>
 
@@ -73,7 +73,7 @@ Without a ruleset (GitHub's new version of branch protections), even though Code
     2. [] Change the **enforcement status** to **Active**.
     3. [] Under **target branches**, click **Add target** and select **Include default branch**.
     4. [] Scroll down and check the **Require code scanning results** box
-    5. [] The CodeQL tool should already be there - there's nothing to change
+    5. [] The CodeQL tool should already be there - there's nothing to change (you can change the security alerts and alerts. But please don't).
 5. [] Scroll down and click the **Create** button.
 
 <details>
@@ -81,8 +81,8 @@ Without a ruleset (GitHub's new version of branch protections), even though Code
   ![image](images/lab-3-2-2.png)
 </details>
 
-7. [] With the ruleset created, both the JavaScript scan has to finish and no vulnerabilities found with CodeQL in order to merge the code.
-8. [] Navigate back to our open PR. The **Merge pull request** button should now be grayed out (there also a big red icon and the text **Merging is blocked** with the list of blocking reasons underneath), preventing us from merging vulnerable code.
+6. [] With the ruleset created, both the JavaScript scan has to finish and no vulnerabilities found with CodeQL in order to merge the code.
+7. [] Navigate back to our open PR. The **Merge pull request** button should now be grayed out (there also a big red icon and the text **Merging is blocked** with the list of blocking reasons underneath), preventing us from merging vulnerable code.
 
 <details>
 
@@ -92,7 +92,7 @@ Without a ruleset (GitHub's new version of branch protections), even though Code
 9. [] Review the **Copilot Autofix suggestion**.
 10. [] Click on the **commit suggestion** button and **commit changes**.
 11. [] After another CodeQL scan, the PR should pass and the **Merge pull request** button should be enabled, allowing you to merge the change without the vulnerability.
-    - ➡️ For the purposes of this lab, you don't have to actually merge the PR, so **you don't have to wait fo the CodeQL scan to finish before moving on**.
+    - ➡️ For the purposes of this lab, you don't have to actually merge the PR, so **you don't have to wait for the CodeQL scan to finish before moving on**.
 12. [] Celebrate 🎉! We just prevented a security vulnerability from entering our codebase!
 
 ## Summary

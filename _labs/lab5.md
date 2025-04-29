@@ -13,18 +13,20 @@ Let's use Secret Scanning with push protections to prevent secrets from entering
 7. [] Don't give the token any permissions - just give it a **name** and scroll down to the bottom and **Generate token**.
 8. [] **Copy**  the value of the token to the clipboard.
     - Note: If you leave this page, you will not be able to copy the token again. If you lose the token from the clipboard, either regenerate the token or create a new one.
-9. [] Now, let's attempt to commit the token to the repository.
+9. Now, let's attempt to commit the token to the repository.
 10. [] Any file would work, but for example, we can open up the `routes/login.ts` file we edited earlier.
 11. [] As an example, on line 18 you can add `const secret = "<YOUR TOKEN>";`, replacing **<YOUR TOKEN>** with the token you just generated - it should start with **github_pat_**.
-12. [] Commit the file and then push the file to the repo.
+12. [] Commit the file and then push the file to the repo, by clicking on the **Commit changes** button and then **Propose Changes**.
+    
 13. [] Push protection should detect the GitHub personal access token and block the push - great!
+14. [] Click on **Cancel** since GitHub Secret Protection did it's job and prevented us from pushing the secret to the repository.
 
 <details>
 
   In the UI:</br>![image](images/lab-5-1-1.png)</br></br>
 </details>
 
-14. [] Depending on how the settings are configured, we could bypass the push protection and push the secret to the repository. But, we don't want to do that! 🙅‍♂️ Repository admins and organization owners would receive an email notification if we did.
+15. [] Depending on how the settings are configured, we could bypass the push protection and push the secret to the repository. But, we don't want to do that! 🙅‍♂️ Repository admins and organization owners would receive an email notification if we did.
 
 ## Summary
 
