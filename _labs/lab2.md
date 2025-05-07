@@ -19,7 +19,7 @@ Now that we have all of the security feature enabled, let's review the security 
   ![image](images/lab-2-1-2.png)
 </details>
 
-4. When reviewing a Dependabot alert, you can see the following information (see if you can locate this information in the alert you opened):
+4. [] Click on an alert. When reviewing a Dependabot alert, you can see the following information (see if you can locate this information in the alert you opened):
    - The severity of the alert
    - The package name and version that is vulnerable
    - The severity of the vulnerability
@@ -71,7 +71,7 @@ Now that we have all of the security feature enabled, let's review the security 
 </details>
 
 
-15. [] Auto-triage your alerts allows you control over how Dependabot opens pull requests, ignores false positives and snoozes alerts. Navigate to  the **Settings** tab (the icon of the gear)  in the repo and then **Code Security** left sidecar, scroll to **Dependabot**, then find **Dependabot rules** underneath **Dependabot alerts**.
+15. [] Auto-triage your alerts allows you control over how Dependabot opens pull requests, ignores false positives and snoozes alerts. Navigate to  the **Settings** tab (the icon of the gear)  in the repo and then **Advanced Security** left sidecar, scroll to **Dependabot**, then find **Dependabot rules** underneath **Dependabot alerts**.
 
 16. []  Add a rule to snooze any alerts that do not have a fix available.  Choose the "gear" icon and select the **New rule** button.  Name the rule `Snooze when no patch available`, add a target metadata for all npm packages: `ecosystem:npm` and ensure the **Dismiss Alerts - Until patch is available** is selected.  Next, select **Create rule**.
 

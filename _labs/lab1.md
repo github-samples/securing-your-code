@@ -24,7 +24,7 @@ In this exercise, you will create a repository with code from which you can work
 5. [] Navigate to +++https://github.com/github-samples/securing-your-code+++ in your browser.
 6. [] Click the green **Use this template** button in the upper right corner of the page.
 7. [] Create a new repository in our organization by choosing **Microsoft-Build-2025** in the owner dropdown.
-8. [] Give the repository a unique name **lab303-<my-unique-repo-name-here>**.  Click the green link below for inspiration on a unique repo name 😉.
+8. [] Give the repository a unique name +++lab301-@lab.LabInstance.ID+++.
 9. [] Make sure you switch it to visibility **Private** so your work does not conflict with other attendees!  Now click **Create repository**.
 10. [] The page will refresh after a few seconds where you can now see the code we will be working with.  
 
@@ -39,8 +39,8 @@ Although Dependabot isn't part of the GitHub Advanced Security product suite, it
 Dependabot and Dependency Graph should already be turned on for your repository. If not, follow the steps below.
 
 1. [] We first want to turn on the security settings for the repository. Navigate to the **Settings** tab (the icon of the gear) in the repo.
-2. [] Click on the  **Code Security** section.
-3. [] Ensure the Dependency Graph is enabled (scroll down to **Code Security** group).  This will be indicated by a red **Disable** button.  If there is a black **Enable** button, click it to enable the **Dependency Graph** setting. To enable Dependabot, we first have to enable the Dependency Graph. This allows Dependabot to ingest your package manifest files.
+2. [] Click on the **Advanced Security** section.
+3. [] Ensure the Dependency Graph is enabled. This will be indicated by a red **Disable** button.  If there is a black **Enable** button, click it to enable the **Dependency Graph** setting. To enable Dependabot, we first have to enable the Dependency Graph. This allows Dependabot to ingest your package manifest files.
 4. [] Ensure the Dependabot alerts are enabled.  This will be indicated by a red **Disable** button.  If there is a black **Enable** button, click it to enable the **Dependabot alerts** setting. This feature will create alerts for vulnerable dependencies found in your repository.
 5. [] Click the **Enable** button next to the **Dependabot security updates** setting.
     - This will automatically create pull requests to update your vulnerable dependencies (if there is a non-vulnerable version to upgrade to).
@@ -56,12 +56,12 @@ Once you are done turning on Dependabot features, the next thing we will need to
 ### Exercise 2: Enable Code Security
 
 1. [] Scroll down to the **GitHub Advanced Security** section and make sure it's enabled.  If there is a black **Enable** button, click it to enable the **GitHub Advanced Security** setting.
-2. [] Click on the **Enabled GitHub Advanced Security for this repository** on the confirmation **Enable GitHub Advanced Security for this repository?** dialog window.
-3. [] Next, let's enable **Code Scanning with CodeQL**. These settings are also under the **Code Security** settings page.
-4. [] Underneath the **Code Security | Tools** heading, click the **Set up** button in the **CodeQL analysis** row.
+2. [] Click on the **Enable GitHub Advanced Security for this repository** on the confirmation **Enable GitHub Advanced Security for this repository?** dialog window.
+3. [] Next, let's enable **Code Scanning with CodeQL**. These settings are also under the **Advanced Security** settings page.
+4. [] Underneath the **Code Scanning | Tools** heading, click the **Set up** button in the **CodeQL analysis** row.
 
 > [!NOTE]  
-> If you do not see the **Code scanning** heading on the **Code security** page after enabling **Code Security** - you have likely not created your repo in the proper Organization. Go back to the beginning of this lab and ensure you choose **Microsoft-Build-2025** value from the dropdown as the new repository **Owner** when you choose **Use this template**.
+> If you do not see the **Code scanning** heading on the **Code Scanning** page after enabling **Code Security** - you have likely not created your repo in the proper Organization. Go back to the beginning of this lab and ensure you choose **Microsoft-Build-2025** value from the dropdown as the new repository **Owner** when you choose **Use this template**.
 
 4. There are two options: **Default** and **Advanced**. Select the **Default** option and review the settings.
     - For this lab, we will use the **Default** setup, which creates a managed Actions workflow (i.e. you will not see a codeql.yaml file committed to the repo). The Advanced option can be used to manage your code scanning workflow as a GitHub Actions workflow YAML file committed to the repo. The **Default** option is a great option to get started quickly to enable code scanning in a repository without needing to commit any additional code.
@@ -96,7 +96,7 @@ Once you are done turning on Dependabot features, the next thing we will need to
 1. [] Ensure that Secret Protection is enabled.  This will be indicated by a red **Disable** button.  If there is a black **Enable** button, click it to enable **Secret Scanning**.
 2. [] Click the **Enable** button next to the **Validity checks** setting. This feature checks if the secret is still valid for [specific partners](https://docs.github.com/en/enterprise-cloud@latest/code-security/secret-scanning/introduction/supported-secret-scanning-patterns#high-confidence-patterns), such as Azure, AWS, and, of course, GitHub. As an example, you can use this feature to check if a GitHub personal access token found in the repo is still valid and needs to be revoked.
 3. [] Click the **Enable** button next to the **Non-provider patterns** setting. This scans for patterns that do not correspond to partners but still have a common syntax, such as a MySQL or MongoDB connection string.
-4. [] Check the box to **Scan for generic passwords**. This feature uses AI to find secrets/passwords that may be in your code that do not correspond to a known provider pattern.
+4. [] Click the **Enable** button next to the **Scan for generic passwords**. This feature uses AI to find secrets/passwords that may be in your code that do not correspond to a known provider pattern.
 5. [] Click the **Enable** button next to the **Push protection** setting. This feature will block pushes that contain high-precision secrets. You can use this [chart](https://docs.github.com/en/enterprise-cloud@latest/code-security/secret-scanning/introduction/supported-secret-scanning-patterns#supported-secrets) to determine which types of secrets would be blocked with secret scanning push protection enabled.
 6. [] Optionally, configure **Who can bypass push protection for secret scanning**.
     - By default, as to not interrupt developers' workflows, anyone with write access to the repository can manually bypass a blocked push that contains secrets (administrators will be notified of this, and it is also captured in the audit logs).
