@@ -141,7 +141,7 @@ Now that we have all of the security feature enabled, let's review the security 
   ![image](images/lab-2-2-4.png)
 </details>
 
-15. [] We will merge this in change in. But first, we have to wait for the CodeQL workflow to finish running to ensure we aren't introducing any *new* vulnerabilities into the codebase. The workflow run will take 2-5 minutes (watch the running workflow in the Checks section to check when it's completed (circle changes from yellow to green and says "All Checks have passed")).
+15. [] We will merge this change. But first, we have to wait for the CodeQL workflow to finish running to ensure we aren't introducing any *new* vulnerabilities into the codebase. The workflow run will take 2-5 minutes (watch the running workflow in the Checks section to check when it's completed (circle changes from yellow to green and says "All Checks have passed")).
 16. [] Once the workflow finishes, click **Ready for review**. This moves the pull request out of the draft state.
 17. [] Afterwards, click **Merge pull request** and then **Confirm merge**.
     - After merging the code into the default branch, a code scan will run and once it finishes, the alert will be closed.
